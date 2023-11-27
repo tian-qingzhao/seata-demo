@@ -1,0 +1,18 @@
+package com.tqz.seata.product.mapper;
+
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.tqz.seata.product.po.Product;
+import org.apache.ibatis.annotations.Param;
+
+/**
+ * <p>Product Dao层
+ *
+ * @author tianqingzhao
+ * @since 2021/7/13 9:40
+ */
+public interface ProductMapper extends BaseMapper<Product> {
+
+    Product selectByCode(@Param("productCode") String productCode);
+
+    int deleteByCode(@Param("productCode") String productCode);
+}
