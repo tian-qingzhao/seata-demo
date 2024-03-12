@@ -11,6 +11,7 @@
     <modules>
         <module>seata-at</module>
         <module>seata-xa</module>
+        <module>seata-tcc</module>
     </modules>
 
     <properties>

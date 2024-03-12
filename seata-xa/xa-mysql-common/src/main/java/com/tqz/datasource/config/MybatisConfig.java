@@ -14,8 +14,10 @@ import org.springframework.core.io.support.ResourcePatternResolver;
 import javax.sql.DataSource;
 
 /**
- * @author Fox
+ * mybatis配置
  *
+ * @author <a href="https://github.com/tian-qingzhao">tianqingzhao</a>
+ * @since 2024/3/12 18:07
  */
 @Configuration
 @MapperScan("com.tqz.datasource.mapper")

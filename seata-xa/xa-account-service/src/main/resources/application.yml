@@ -50,6 +50,10 @@ seata:
   application-id: ${spring.application.name}
   # seata 服务分组，要与服务端配置service.vgroup_mapping的后缀对应
   tx-service-group: account_service_group
+  # seata没有使用额外的配置中心的话，这里必须要配置vgroup-mapping
+#  service:
+#    vgroup-mapping:
+#      account_service_group: default
   registry:
     # 指定nacos作为注册中心
     type: nacos
@@ -70,7 +74,4 @@ seata:
       data-id: seata-server.properties
       username: nacos
       password: nacos
-
-
-
 

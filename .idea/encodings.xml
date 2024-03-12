@@ -9,6 +9,16 @@
     <file url="file://$PROJECT_DIR$/seata-at/product-service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/seata-at/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/seata-at/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seata-tcc/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seata-tcc/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seata-tcc/tcc-account-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seata-tcc/tcc-account-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seata-tcc/tcc-mysql-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seata-tcc/tcc-mysql-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seata-tcc/tcc-order-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seata-tcc/tcc-order-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seata-tcc/tcc-storage-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seata-tcc/tcc-storage-service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/seata-xa/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/seata-xa/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/seata-xa/xa-account-service/src/main/java" charset="UTF-8" />

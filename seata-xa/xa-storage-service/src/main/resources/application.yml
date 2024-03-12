@@ -49,6 +49,7 @@ seata:
   application-id: ${spring.application.name}
   # seata 服务分组，要与服务端配置service.vgroup_mapping的后缀对应
   tx-service-group: product_service_group
+  # seata没有使用额外的配置中心的话，这里必须要配置vgroup-mapping
   service:
     vgroup-mapping:
       product_service_group: default
