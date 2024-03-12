@@ -9,6 +9,16 @@
     <file url="file://$PROJECT_DIR$/seata-at/product-service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/seata-at/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/seata-at/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seata-xa/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seata-xa/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seata-xa/xa-account-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seata-xa/xa-account-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seata-xa/xa-mysql-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seata-xa/xa-mysql-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seata-xa/xa-order-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seata-xa/xa-order-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seata-xa/xa-storage-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seata-xa/xa-storage-service/src/main/resources" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

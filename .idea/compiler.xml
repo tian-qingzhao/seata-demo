@@ -6,9 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="xa-storage-service" />
         <module name="product-service" />
+        <module name="xa-mysql-common" />
         <module name="order-service" />
         <module name="account-service" />
+        <module name="xa-account-service" />
+        <module name="xa-order-service" />
       </profile>
     </annotationProcessing>
   </component>
