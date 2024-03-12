@@ -6,16 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="account-service" />
         <module name="product-service" />
         <module name="order-service" />
+        <module name="account-service" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="account-service" target="8" />
-      <module name="order-service" target="8" />
-      <module name="product-service" target="8" />
-      <module name="seata-demo" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
