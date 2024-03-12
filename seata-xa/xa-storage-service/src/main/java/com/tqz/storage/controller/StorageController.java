@@ -6,15 +6,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author Fox
+ * 库存接口
+ *
+ * @author <a href="https://github.com/tian-qingzhao">tianqingzhao</a>
+ * @since 2024/3/12 16:51
  */
 @RestController
 @RequestMapping("/storage")
 public class StorageController {
-    
+
     @Autowired
     private StorageService storageService;
-    
+
     @RequestMapping(path = "/deduct")
     public Boolean deduct(String commodityCode, Integer count) {
         // 扣减库存

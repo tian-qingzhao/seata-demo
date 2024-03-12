@@ -1,5 +1,8 @@
 package com.tqz.storage.service;
 
+/**
+ * 库存接口
+ */
 public interface StorageService {
     
     /**
