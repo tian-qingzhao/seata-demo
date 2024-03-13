@@ -9,6 +9,7 @@
         <module name="tcc-account-service" />
         <module name="tcc-storage-service" />
         <module name="xa-storage-service" />
+        <module name="jta" />
         <module name="product-service" />
         <module name="tcc-order-service" />
         <module name="xa-mysql-common" />

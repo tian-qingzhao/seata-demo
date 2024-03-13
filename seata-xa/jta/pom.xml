@@ -5,25 +5,25 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.tqz</groupId>
-        <artifactId>seata-demo</artifactId>
+        <artifactId>seata-xa</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>seata-xa</artifactId>
-    <packaging>pom</packaging>
-
-    <modules>
-        <module>xa-account-service</module>
-        <module>xa-mysql-common</module>
-        <module>xa-order-service</module>
-        <module>xa-storage-service</module>
-        <module>jta</module>
-    </modules>
+    <artifactId>jta</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <dependencies>
+        <!-- mysql jdbc 实现了XA规范 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.48</version>
+        </dependency>
+    </dependencies>
 
 </project>

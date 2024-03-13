@@ -19,6 +19,8 @@
     <file url="file://$PROJECT_DIR$/seata-tcc/tcc-order-service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/seata-tcc/tcc-storage-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/seata-tcc/tcc-storage-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seata-xa/jta/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seata-xa/jta/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/seata-xa/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/seata-xa/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/seata-xa/xa-account-service/src/main/java" charset="UTF-8" />
