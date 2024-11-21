@@ -1,6 +1,6 @@
-package com.tqz.seata.order.service.impl;
+package com.tqz.seata.order.core;
 
-import com.tqz.seata.order.core.CirclulationServiceImpl;
+import cn.hutool.extra.spring.SpringUtil;
 import com.tqz.seata.order.dto.OrderDTO;
 import com.tqz.seata.order.mapper.OrderMapper;
 import com.tqz.seata.order.po.Order;
@@ -9,8 +9,7 @@ import com.tqz.seata.order.util.ResultData;
 import com.tqz.seata.order.util.ReturnCode;
 import io.seata.core.context.RootContext;
 import io.seata.spring.annotation.GlobalTransactional;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -20,18 +19,20 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * <p>订单的服务实现类
+ * 循环创建订单实现类.
  *
- * @author tianqingzhao
- * @since 2021/7/12 17:01
+ * @author <a href="https://github.com/tian-qingzhao">tianqingzhao</a>
+ * @since 2024/11/21 10:35
  */
+@Slf4j
 @Service
-@Log4j2
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
-public class OrderServiceImpl implements OrderService {
+public class CirclulationServiceImpl {
 
-    private final OrderMapper orderMapper;
-    private final RestTemplate restTemplate;
+    @Autowired
+    private RestTemplate restTemplate;
+
+    @Autowired
+    private OrderMapper orderMapper;
 
     @Value("${service.name.account}")
     private String serviceNameAccount;
@@ -39,16 +40,18 @@ public class OrderServiceImpl implements OrderService {
     @Value("${service.name.product}")
     private String serviceNameProduct;
 
-    @Autowired
-    private CirclulationServiceImpl circlulationService;
+    @GlobalTransactional(rollbackFor = Exception.class, name = "CirclulationCreateOrder")
+    public void createOrder(String accountCode) {
+        OrderDTO orderDTO = new OrderDTO();
+        orderDTO.setCount(2);
+        orderDTO.setAccountCode(accountCode);
+        orderDTO.setProductCode("001");
 
-    @GlobalTransactional(name = "TX_ORDER_CREATE")
-    @Override
-    public ResultData createOrder(OrderDTO orderDTO) {
+        log.info("ORDER XID is: {}", RootContext.getXID());
+
         Order order = new Order();
         BeanUtils.copyProperties(orderDTO, order);
-        orderMapper.insert(order);
-        log.info("ORDER XID is: {}", RootContext.getXID());
+        SpringUtil.getBean(OrderService.class).insert(order);
 
         MultiValueMap productParamsMap = new LinkedMultiValueMap();
         productParamsMap.add("productCode", orderDTO.getProductCode());
@@ -64,28 +67,10 @@ public class OrderServiceImpl implements OrderService {
             ResultData resultData = restTemplate.postForObject(serviceNameAccount + "account/reduce", accountParamsMap, ResultData.class);
 
             if (resultData.getCode() == ReturnCode.RC100.getCode()) {
-                return ResultData.success("下单成功！");
+                log.info("下单成功");
+                return;
             }
         }
         throw new RuntimeException("下单失败！");
-    }
-
-    @Override
-    public void insert(Order order) {
-        orderMapper.insert(order);
-    }
-
-    @Override
-    public void testCirculation() {
-        String[] accountCodeArr = {"tian", "zhangsan", "lisi", "wangwu", "zhaoliu"};
-        for (int i = 0; i < 2; i++) {
-            try {
-                log.info("循环第 {} 次下订单的逻辑 开始", i);
-                circlulationService.createOrder(accountCodeArr[i]);
-                log.info("循环第 {} 次下订单的逻辑 结束", i);
-            } catch (Exception e) {
-                log.error("循环第 {} 次下订单的逻辑 失败", i, e);
-            }
-        }
     }
 }

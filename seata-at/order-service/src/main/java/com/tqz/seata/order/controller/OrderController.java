@@ -6,6 +6,7 @@ import com.tqz.seata.order.util.ResultData;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2021/7/12 17:01
  */
 @Api(value = "订单接口", tags = "订单接口")
+@Slf4j
 @RestController
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 @RequestMapping("order")
@@ -29,5 +31,10 @@ public class OrderController {
     @PostMapping("/create")
     public ResultData create(OrderDTO orderDTO) {
         return orderService.createOrder(orderDTO);
+    }
+
+    @PostMapping("testCirculation")
+    public void testCirculation() {
+        orderService.testCirculation();
     }
 }

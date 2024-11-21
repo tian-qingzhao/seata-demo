@@ -1,6 +1,7 @@
 package com.tqz.seata.order.service;
 
 import com.tqz.seata.order.dto.OrderDTO;
+import com.tqz.seata.order.po.Order;
 import com.tqz.seata.order.util.ResultData;
 
 /**
@@ -18,4 +19,8 @@ public interface OrderService {
      * @return
      */
     ResultData createOrder(OrderDTO orderDTO);
+
+    void insert(Order order);
+
+    void testCirculation();
 }
